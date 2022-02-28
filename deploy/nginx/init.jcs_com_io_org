@@ -1,0 +1,20 @@
+# Serve the basics to initialise SSL from certbot
+server {
+    listen 80;
+
+    server_name journalcomparisonservice.com journalcomparisonservice.io journalcomparisonservice.org;
+
+    root /var/www/pstf-holding/;
+    index html/index.html;
+
+    # Block .git and other hidden files (except .well-known for SSL)
+    location ~ /\.(?!well-known).* {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+}

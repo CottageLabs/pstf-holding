@@ -1,0 +1,33 @@
+# The company website for Technoantics
+server {
+    listen 80;
+    listen [::]:80;
+    listen 443 ssl;
+    listen [::]:443 ssl;
+
+    server_name journalcomparisonservice.com journalcomparisonservice.io journalcomparisonservice.org;
+
+    root /var/www/pstf-holding/;
+    index html/index.html;
+
+    # Block .git and other hidden files (except .well-known for SSL)
+    location ~ /\.(?!well-known).* {
+        deny all;
+        access_log off;
+        log_not_found off;
+    }
+
+    location / {
+        try_files $uri $uri/ /html/$uri /html/$uri/ =404;
+    }
+
+    access_log /var/log/nginx/pstf-holding.access.log;
+    error_log /var/log/nginx/pstf-holding.error.log;
+
+    ssl_certificate /etc/letsencrypt/live/journalcomparisonservice.com/fullchain.pem;
+    ssl_certificate_key /etc/letsencrypt/live/journalcomparisonservice.com/privkey.pem;
+
+    if ($scheme != "https") {
+        return 301 https://$host$request_uri;
+    }
+}

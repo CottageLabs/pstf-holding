@@ -51,7 +51,7 @@ The nginx config in `deploy/nginx` expects an SSL certificate - this should be c
 For your SSL certificate to validate, the site must be accessible via nginx; create the symlinks to the temporary
 nginx config:
 
-    sudo ln -s /var/www/pstf-holding/deploy/init.jcs_com_io_org /etc/nginx/sites-available/jcs_com_io_org
+    sudo ln -s /var/www/pstf-holding/deploy/nginx/init.jcs_com_io_org /etc/nginx/sites-available/jcs_com_io_org
     sudo ln -s /etc/nginx/sites-available/jcs_com_io_org /etc/nginx/sites-enabled/jcs_com_io_org
     sudo nginx -s reload
 

@@ -1,1 +1,134 @@
-{};
+/*
+
+=========================================================
+* Volt - Free Bootstrap 5 Dashboard
+=========================================================
+
+* Product Page: https://themesberg.com/product/admin-dashboard/volt-bootstrap-5-dashboard
+* Copyright 2021 Themesberg (https://www.themesberg.com)
+
+* Designed and coded by https://themesberg.com
+
+=========================================================
+
+* The above copyright notice and this permission notice shall be included in all copies or substantial portions of the Software. Please contact us to request a removal. Contact us if you want to remove it.
+
+*/
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap");
+:root {
+  --bs-primary: #F39325;
+  --bs-secondary: #6c757d;
+  --bs-success: #00916E;
+  --bs-info: #0dcaf0;
+  --bs-warning: #ffc107;
+  --bs-danger: #dc3545;
+  --bs-light: #f8f9fa;
+  --bs-dark: #2F2D2E; }
+
+*,
+*::before,
+*::after {
+  box-sizing: border-box; }
+
+body {
+  margin: 0;
+  background-color: var(--bs-light);
+}
+
+h1, .h1 {
+  font-size: calc(1.375rem + 1.5vw); }
+  @media (min-width: 1200px) {
+    h1, .h1 {
+      font-size: 2rem; } }
+
+
+.container-fluid {
+  width: 100%;
+  padding-right: var(--bs-gutter-x, 0.75rem);
+  padding-left: var(--bs-gutter-x, 0.75rem);
+  margin-right: auto;
+  margin-left: auto; }
+
+.block {
+  min-height: 100%;
+  height: 100%; }
+  .block_tile *, .block_tile *:before, .block_tile *:after {
+    box-sizing: border-box; }
+  .block_tile section {
+    width: 610px;
+    margin: 0 auto; }
+  .block_tile .wrapper {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    background-color: #FFFFFF;
+    min-width: 720px;
+    max-height: 85vh;
+    width: 720px;
+    min-height: 40rem;
+    position: absolute;
+    top: 25%;
+    border: 4px solid #F39325;
+    padding: 6rem 8rem 3rem 8rem;
+    color: #2F2D2E;
+    font-size: small; }
+    .block_tile .wrapper .content {
+      display: flex;
+      flex-direction: column;
+      justify-content: space-evenly;
+      min-height: inherit;
+      max-height: inherit;
+      height: inherit;
+      overflow: scroll; }
+      .block_tile .wrapper .content h1 + p, .block_tile .wrapper .content .h1 + p {
+        margin-top: -2.5rem;
+        margin-bottom: 5rem; }
+      .block_tile .wrapper .content::-webkit-scrollbar {
+        display: none; }
+    .block_tile .wrapper .JCS-name {
+      font-weight: 600;
+      font-size: 3rem;
+      line-height: 3.8rem;
+      color: #FFFFFF;
+      position: absolute;
+      bottom: -.5rem;
+      left: 0;
+      transform: rotate(270deg);
+      transform-origin: 0 4rem; }
+
+.sidebar {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  height: 100%; }
+  .sidebar-orange {
+    margin-left: -500px;
+    left: 50%;
+    width: 282px;
+    background-position: top;
+    background-size: cover;
+    background-image: url("../img/sidebar-orange.svg"); }
+
+html {
+  height: 100vh;
+  font-size: 62.5%; }
+
+body {
+  height: 100vh;
+  font-family: Source Sans Pro, sans-serif;
+}
+
+.fullscreen_page {
+  background-image: url("../img/background-orange.svg");
+  background-size: cover;
+  background-repeat: no-repeat; }
+
+.registration_confirmation {
+  margin: auto; }
+  .registration_confirmation p {
+    position: absolute;
+    bottom: -3rem;
+    right: 1rem; }
+
+
+/*# sourceMappingURL=volt.css.map */

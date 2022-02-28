@@ -38,6 +38,15 @@ Run a code deploy from your local machine to receive the source tree for the fir
 
     git push production main
 
+N.B. if your production server is running an old version of `git` it may not know about the `main` branch being default. The error looks like:
+
+    remote: Main ref received.  Deploying main branch to production...
+    remote: fatal: You are on a branch yet to be born
+
+Fix that by checking out `main` on the host server with e.g.:
+
+    git --work-tree=/var/www/pstf-holding --git-dir=/home/user/pstf-holding.git checkout -f main
+
 After the first deploy, replace the copied hook with a symlink to the checked out hook (so you can update the hook):
 
     ln -sf /var/www/pstf-holding/deploy/hooks/post-receive hooks/post-receive
@@ -51,7 +60,7 @@ The nginx config in `deploy/nginx` expects an SSL certificate - this should be c
 For your SSL certificate to validate, the site must be accessible via nginx; create the symlinks to the temporary
 nginx config:
 
-    sudo ln -s /var/www/pstf-holding/deploy/init.jcs_com_io_org /etc/nginx/sites-available/jcs_com_io_org
+    sudo ln -s /var/www/pstf-holding/deploy/nginx/init.jcs_com_io_org /etc/nginx/sites-available/jcs_com_io_org
     sudo ln -s /etc/nginx/sites-available/jcs_com_io_org /etc/nginx/sites-enabled/jcs_com_io_org
     sudo nginx -s reload
 
